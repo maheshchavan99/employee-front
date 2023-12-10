@@ -11,7 +11,7 @@ const initialState = {
 export const fetchAllUserList = createAsyncThunk("dashboard/fetchsers", async (param, { rejectWithValue }) => {
 
   try {
-    const url = `/api/people`
+    let url = `/api/people`
     if (param) url = url + param
     const res = await axios.get(url)
     if (res?.status == 200) return res?.data
